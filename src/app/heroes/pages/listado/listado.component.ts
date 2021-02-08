@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Heroe } from '../../interfaces/heroes.interface';
 import { HeroesService } from '../../services/heroes.service';
 
 @Component({
@@ -9,11 +10,13 @@ import { HeroesService } from '../../services/heroes.service';
 })
 export class ListadoComponent implements OnInit {
 
+  public heroes : Heroe[] = [];
+
   constructor( private heroesSevice : HeroesService) { }
 
   ngOnInit(): void {
     this.heroesSevice.getHeroes()
-        .subscribe( resp => console.log(resp));
+        .subscribe( heroesResp => this.heroes = heroesResp);
   }
 
 }
