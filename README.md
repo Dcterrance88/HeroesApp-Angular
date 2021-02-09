@@ -35,3 +35,19 @@ En el proyecto se tratarán los siguientes temas
 - Dialogs
 
 - Inyección de servicios manualmente
+
+- Protección de rutas
+
+- Rutas privadas
+
+- Rutas públicas
+
+- Servicio de autenticación
+
+- Guards
+
+- CanActivate
+
+- Can Load
+
+- Mantener la sesión del usuario
