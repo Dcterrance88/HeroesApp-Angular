@@ -25,3 +25,13 @@ En el proyecto se tratarán los siguientes temas
 - JSON-Server
 
 - Angular Flex y Flexbox
+
+- CRUD
+
+- Pipes puros e impuros
+
+- Snacks
+
+- Dialogs
+
+- Inyección de servicios manualmente
