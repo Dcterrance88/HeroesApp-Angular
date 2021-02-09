@@ -54,7 +54,7 @@ export class AgregarComponent implements OnInit {
   }
 
   
-  public guardar(){
+  public guardar() : void {
     if(this.heroe.superhero.trim().length === 0){
       return;
     }
@@ -69,6 +69,13 @@ export class AgregarComponent implements OnInit {
           this.router.navigate(['/heroes/editar', heroe.id])
         })
     }
+  }
+
+  public borrarHeroe() : void {
+    this.heroesService.borrarHeroe(this.heroe.id!)
+      .subscribe( resp => {
+        this.router.navigate(['/heroes/'])
+      });
   }
 
 }
