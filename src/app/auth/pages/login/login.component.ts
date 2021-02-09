@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -9,15 +10,22 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-  constructor( private _router: Router) { }
+  constructor(private _router: Router,
+    private _authService: AuthService) { }
 
   ngOnInit(): void {
   }
 
-  public login(){
+  public login() {
     // Ir al backend
     // tener un usuario
-    this._router.navigate(['./heroes']);
+    this._authService.login()
+      .subscribe(resp => {
+        console.log(resp);
+        if(resp.id){
+          this._router.navigate(['./heroes']);          
+        }
+      });
   }
 
 }
